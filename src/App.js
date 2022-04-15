@@ -38,7 +38,7 @@ function App() {
       assembly.post('/upload', audioFile).then((res) => {
         setUploadedURL(res.data.upload_url);
       });
-    // console.log(uploadedURL);
+    console.log(uploadedURL);
   }, [audioFile]);
 
   const startRecording = () => {
