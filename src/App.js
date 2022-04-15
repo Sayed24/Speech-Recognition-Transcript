@@ -38,7 +38,7 @@ function App() {
       assembly.post('/upload', audioFile).then((res) => {
         setUploadedURL(res.data.upload_url);
       });
-    console.log(uploadedURL);
+    // console.log(uploadedURL);
   }, [audioFile]);
 
   const startRecording = () => {
@@ -67,7 +67,7 @@ function App() {
 
   return (
     <div className='flex flex-col items-center justify-center my-10 space-y-5'>
-      <h1 className='text-3xl'>React Spech Recognition App</h1>
+      <h1 className='text-3xl'>React Speech Recognition App</h1>
       <h3 className='text-2xl'>
         Brought to you by:{' '}
         <a
@@ -80,22 +80,22 @@ function App() {
         </a>
       </h3>
       <audio ref={audioPlayer} src={blob} controls='controls' />
-      <div>
+      <div className='space-y-1'>
         <button
           disabled={isRecording}
           onClick={startRecording}
-          className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+          className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full'
         >
           Record
         </button>
         <button
           disabled={!isRecording}
           onClick={stopRecording}
-          className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded'
+          className='bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mx-2'
         >
           Stop
         </button>
-        <button className='bg-pink-300 hover:bg-pink-500 text-white font-bold py-2 px-4 rounded'>
+        <button className='bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded'>
           Send
         </button>
       </div>
